@@ -16,7 +16,6 @@ const Home = () => {
                 <GrayLine />
             </div>
             <div>
-
                 <ProductCard
                     name="비숑 블랙 머그잔"
                     description="쌀쌀한 날씨에 따뜻한 우유, 커피 한잔하기 좋은 블랙 & 화이트 비숑 머그잔입니다."
@@ -33,7 +32,6 @@ const Home = () => {
                     thumbnail="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product3.jpg"
                 />
             </div>
-
         </div >
     );
 };
@@ -48,10 +46,5 @@ const GrayLine = styled.div`
   width: 100%;
   background: #eeeeee;
 `;
-
-const ProductSection = styled.div`
-  padding: 20px;
-`;
-
 
 export default Home;
