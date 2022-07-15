@@ -9,14 +9,14 @@ const Navigation = () => {
 };
 
 const NavigationStyled = styled.div`
-  padding: 20px;
+  padding: 20px 120px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #000000; 
+
   border-bottom: solid 1px #eeeeee; ;
 `;
+
 
 export default Navigation;
