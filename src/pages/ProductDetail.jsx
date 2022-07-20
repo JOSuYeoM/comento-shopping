@@ -7,7 +7,7 @@ import { getProductDetail } from "../data/mockData";
 
 const ProductDetail = () => {
   let { ProductId } = useParams();
-  const [Product, setProduct] = useState();
+  const [ product, setProduct] = useState()
 
   useEffect(() => {
     const result = getProductDetail(ProductId);
