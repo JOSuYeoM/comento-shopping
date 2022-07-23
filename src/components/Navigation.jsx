@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 const Navigation = () => {
   return (
@@ -18,5 +19,4 @@ const NavigationStyled = styled.div`
   border-bottom: solid 1px #eeeeee; ;
 `;
 
-
-export default Navigation;
+export default Navigation; 
