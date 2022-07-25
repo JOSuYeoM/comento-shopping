@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <div>
             <div>
-                <Navigation />
+                <Navigation name=" 코멘토 쇼핑" />
 
                 <ThemeSection>
                     <ThemeButton themeName={"#겨울방한템"}onClick={() => onClickThemeButton(1)}/>
