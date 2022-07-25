@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
 import Review from "../components/Review";
 import { getProductDetail, mockReviews } from "../data/mockData";
+import * as webStorage from "../utils/webStorage";
 
 
 const ProductDetail = () => {
   let { ProductId } = useParams();
   const [product, setProduct] = useState();
   const [activeMenuTab, setActiveMenuTab] = useState("description");
+  const navigate= useNavigate();
 
   useEffect(() => {
     const result = getProductDetail(ProductId);
@@ -20,9 +22,14 @@ const ProductDetail = () => {
     setActiveMenuTab(menuTabName);
   };
 
+  const onClickAddBasketButton=()=>{
+    webStorage.addBasket(product);
+    navigate("/basket");
+  };
+
   return (
     <Container>
-      <Navigation />
+      <Navigation name="코멘토 쇼핑" back={true} />
       {product && (
         <main>
           <MainImage
@@ -67,13 +74,17 @@ const ProductDetail = () => {
           )}
         </main>
       )}
+      <AddBasketButton onClick={onClickAddBasketButton}>장바구니 담기</AddBasketButton>
     </Container>
   );
 };
 
 export default ProductDetail;
 
-const Container = styled.div``;
+const Container = styled.div`
+padding-bottom: 100px;
+`;
+
 const MainImage = styled.div`
   width: 100%;
   height: 420px;
@@ -112,4 +123,22 @@ const MenuTab = styled.div`
 
 const ProductDetailImage = styled.img`
   width: 100%;
+`;
+
+const AddBasketButton = styled.div`
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-width: 390px;
+  height: 70px;
+  background: #24dbaf;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
 `;
