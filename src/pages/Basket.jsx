@@ -29,7 +29,7 @@ const Basket = () => {
 
   return (
     <BasketStyled>
-      <Navigation name="장바구니" hasBack={true} />
+      <Navigation name="장바구니" back={true} />
 
       {basketItems &&
         basketItems.map((product) => (
@@ -43,7 +43,9 @@ const Basket = () => {
           />
         ))}
 
-      <div>상품 {basketItemCount}개 </div>
+      <div>상품 금액({basketItemCount}개) </div>
+      <div>배송비</div>
+      <div>총 주문금액</div>
     </BasketStyled>
   );
 };
